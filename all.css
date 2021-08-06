@@ -625,6 +625,15 @@ input:invalid {
   padding-bottom: 2rem;
 }
 
+form input, form select {
+  font-size: 16px;
+  padding: 8px;
+}
+
+form input:hover, form select:hover, form input:focus, form select:focus {
+  border-color: #4a4a4a;
+}
+
 html {
   font-size: 16px;
   height: 100%;
@@ -744,6 +753,17 @@ body {
   cursor: pointer;
 }
 
+form input, form select {
+  border: 1px solid #a7aaaf;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 8px;
+}
+
+form input:hover, form select:hover, form input:focus, form select:focus {
+  border-color: #4a4a4a;
+}
+
 header {
   width: 100%;
   height: 56px;
@@ -759,20 +779,132 @@ header {
 }
 
 .main-content .container {
-  width: 80%;
+  width: 95%;
   margin: 0 auto;
 }
 
+.stepper-panel {
+  height: 120px;
+}
+
 .stepper-panel .title {
+  padding: 1rem;
   font-size: 1.5rem;
 }
 
-.stepper-panel .circle-container {
+.stepper-panel .stepper-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
+}
+
+.stepper-panel .stepper-container .step .circle-container {
   height: 24px;
   width: 24px;
   background: #a7aaaf;
   border-radius: 50%;
   color: #4a4a4a;
   margin: 0 auto;
+}
+
+.form-panel .part-delivery {
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[6];
+      grid-template-rows: repeat(6, 1fr);
+      grid-template-areas: "title title title" "salutation name name" "phone phone phone" "email email email" "location location location" "address address address";
+  grid-gap: 1rem;
+}
+
+.form-panel .part-delivery .title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: title;
+  font-size: 1.5rem;
+}
+
+.form-panel .part-delivery .form-row.gird-salutation {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: salutation;
+}
+
+.form-panel .part-delivery .form-row.grid-name {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: name;
+}
+
+.form-panel .part-delivery .form-row.grid-phone {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: phone;
+}
+
+.form-panel .part-delivery .form-row.grid-email {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: email;
+}
+
+.form-panel .part-delivery .form-row.grid-location {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: location;
+}
+
+.form-panel .part-delivery .form-row.grid-address {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: address;
+}
+
+.form-panel .part-delivery .form-row ~ label {
+  display: block;
+}
+
+.form-panel .part-courier {
+  padding: 1rem;
+}
+
+.form-panel .part-courier .title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: title;
+  font-size: 1.5rem;
+}
+
+.form-panel .part-payment {
+  padding: 1rem;
+}
+
+.form-panel .part-payment .title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: title;
+  font-size: 1.5rem;
+}
+
+form input[type="text"] {
+  width: 100%;
+}
+
+form select {
+  width: 100%;
 }
 /*# sourceMappingURL=all.css.map */

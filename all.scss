@@ -165,8 +165,8 @@ $spacers: (
     // box-shadow: 30px 0 100px 0 green;
 }
 %input-style {
-    border: 1px solid $light-gray;
-    border-radius: 5px;
+    // border: 1px solid $light-gray;
+    // border-radius: 5px;
     font-size: 16px;
     padding: 8px;
     &:hover,
@@ -270,7 +270,22 @@ body {
 .cursor-pointer {
     cursor: pointer;
 }
+// 無效
+%input-style {
+    border: 1px solid $light-gray;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 8px;
+    &:hover,
+    &:focus {
+        border-color: $dark-gray;
+    }
+}
 
+%standard-boxshadow {
+    box-shadow: 3px 0 13px 0 rgba(100, 112, 134, 0.1);
+    // box-shadow: 30px 0 100px 0 green;
+}
 // style
 header {
     width: 100%;
@@ -285,21 +300,103 @@ header {
 .main-content {
     width: 100%;
     .container {
-        width: 80%;
+        width: 95%;
         margin: 0 auto;
     }
 }
 
 .stepper-panel {
+    height: 120px;
     .title {
+        padding: 1rem;
         font-size: 1.5rem;
     }
-    .circle-container {
-        height: 24px;
-        width: 24px;
-        background: $light-gray;
-        border-radius: 50%;
-        color: $dark-gray;
-        margin: 0 auto;
+    .stepper-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        .step {
+            .circle-container {
+                height: 24px;
+                width: 24px;
+                background: $light-gray;
+                border-radius: 50%;
+                color: $dark-gray;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+.form-panel {
+    .part-delivery {
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas:
+            "title title title"
+            "salutation name name"
+            "phone phone phone"
+            "email email email"
+            "location location location"
+            "address address address";
+        grid-gap: 1rem;
+        .title {
+            grid-area: title;
+            font-size: 1.5rem;
+        }
+        .form-row {
+            &.gird-salutation {
+                grid-area: salutation;
+            }
+            &.grid-name {
+                grid-area: name;
+            }
+            &.grid-phone {
+                grid-area: phone;
+            }
+            &.grid-email {
+                grid-area: email;
+            }
+            &.grid-location {
+                grid-area: location;
+            }
+            &.grid-address {
+                grid-area: address;
+            }
+            // width: 100%;
+            ~ label {
+                display: block;
+            }
+        }
+    }
+    .part-courier {
+        padding: 1rem;
+        // display: grid;
+        .title {
+            grid-area: title;
+            font-size: 1.5rem;
+        }
+    }
+    .part-payment {
+        padding: 1rem;
+        // display: grid;
+        .title {
+            grid-area: title;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+form {
+    input {
+        @extend %input-style;
+        &[type="text"]{
+            width:100%;
+        }
+    }
+    select {
+        @extend %input-style;
+        width: 100%;
     }
 }

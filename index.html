@@ -23,7 +23,7 @@
                 <h1 class="title">結帳</h1>
             </div>
             <div class="stepper-container">
-                <div class="step">
+                <div class="step ml-0">
                     <div class="circle-container"></div>
                 </div>
                 <div class="step">
@@ -36,14 +36,14 @@
                 </div>
             </div>
         </div>
-        <div class="form-panel">
+        <div class="form-panel container">
             <div class="form-container">
                 <form action="">
                     <div class="form-content">
                         <!-- .part  step 三種不同內容-->
-                        <div class="part">
-                            <h4>寄送地址</h4>
-                            <div class="form-row">
+                        <div class="part-delivery">
+                            <h4 class="title">寄送地址</h4>
+                            <div class="form-row gird-salutation">
                                 <div class="select-wrapper">
                                     <label for="">稱謂</label>
                                     <select name="a-type" id="a-type" required>
@@ -52,22 +52,26 @@
                                         <option value="female">小姐</option>
                                     </select>
                                 </div>
+                            </div>
+                            <div class="form-row grid-name">
                                 <div class="input-wrapper">
                                     <label for="">姓名</label>
                                     <input type="text">
                                 </div>
                             </div>
-                            <div class="form-row">
+                            <div class="form-row grid-phone">
                                 <div class="input-wrapper">
                                     <label for="">電話</label>
                                     <input type="text">
                                 </div>
+                            </div>
+                            <div class="form-row grid-email">
                                 <div class="input-wrapper">
                                     <label for="">Email</label>
                                     <input type="text">
                                 </div>
                             </div>
-                            <div class="form-row">
+                            <div class="form-row grid-location">
                                 <div class="select-wrapper">
                                     <label for="">縣市</label>
                                     <select name="a-type" id="a-type" required>
@@ -79,19 +83,27 @@
                                         <option value="5">台中</option>
                                     </select>
                                 </div>
+                            </div>
+                            <div class="form-row grid-address">
                                 <div class="input-wrapper">
                                     <label for="">地址</label>
                                     <input type="text">
                                 </div>
                             </div>
                         </div>
-                        <div class="part">
+                        <div class="part-courier">
+                            <h4 class="title">運送方式</h4>
                             <div class="form-row">
                                 <input type="radio">
+                                <label for="">標準運送</label>
+                            </div>
+                            <div class="form-row">
                                 <input type="radio">
+                                <label for="">DHL 貨運</label>
                             </div>
                         </div>
-                        <div class="part">
+                        <div class="part-payment">
+                            <h4 class="title">付款資訊</h4>
                             <div class="form-row">
                                 <div class="input-wrapper">
                                     <label for="">持卡人姓名</label>
@@ -125,7 +137,7 @@
                     <div class="cart-items">
                         <div class="item">
                             <div class="pic">
-                         <img src="https://picsum.photos/id/684/300/300" alt="">
+                                <img src="https://picsum.photos/id/684/300/300" alt="">
                             </div>
                             <div class="info">
                                 <span>1</span>
@@ -142,7 +154,6 @@
                                 <span>1</span>
                                 <span>4000</span>
                             </div>
-
                         </div>
                     </div>
                 </div>
