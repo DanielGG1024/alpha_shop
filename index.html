@@ -97,7 +97,7 @@
                             <div class="part part-courier none">
                                 <h4 class="title">運送方式</h4>
                                 <div class="part-courier-conrainer">
-                                    <label for="standard" class="form-row d-flex justify-content-between mt-5">
+                                    <label for="standard" class="form-row d-flex justify-content-between mt-5" data-price="0">
                                         <div class="description d-flex align-items-center">
                                             <input type="radio" id="standard" name="delivery">
                                             <div class="ml-3">
@@ -106,10 +106,10 @@
                                             </div>
                                         </div>
                                         <div>
-                                            <span>免費</span>
+                                            <span >免費</span>
                                         </div>
                                     </label>
-                                    <label for="dhl" class="form-row d-flex justify-content-between mt-5">
+                                    <label for="dhl" class="form-row d-flex justify-content-between mt-5" data-price="500">
                                         <div class="description d-flex align-items-center">
                                             <input type="radio" id="dhl" name="delivery">
                                             <div class="ml-3">
@@ -161,10 +161,10 @@
             <div class="cart-panel">
                 <div class="cart-container container">
                     <div class="cart-content">
-                        <div class="cart-items">
+                        <div class="cart-items" id="all-item">
                             <div class="item mb-4">
                                 <div class="pic">
-                                    <img src="https://picsum.photos/id/684/300/300" alt="">
+                                    <img src="./pic/Block.png" alt="">
                                 </div>
                                 <div class="info d-flex flex-column align-items-end">
                                     <div class="info-left">
@@ -172,19 +172,19 @@
                                             <span>破壞補釘修身牛仔褲</span>
                                         </div>
                                         <div class="info-amount">
-                                            <span class="circle-container">+</span>
+                                            <span class="circle-container" id="add">+</span>
                                             <span class="amount">1</span>
-                                            <span class="circle-container">-</span>
+                                            <span class="circle-container" id="subtract">-</span>
                                         </div>
                                     </div>
                                     <div class="info-price">
-                                        <span>$</span><span>3999</span>
+                                        <span>$</span><span id="price">3999</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="pic">
-                                    <img src="https://picsum.photos/id/478/300/300" alt="">
+                                    <img src="./pic/Block (1).png" alt="">
                                 </div>
                                 <div class="info d-flex flex-column align-items-end">
                                     <div class="info-left">
@@ -192,24 +192,24 @@
                                             <span>刷色直筒牛仔褲</span>
                                         </div>
                                         <div class="info-amount">
-                                            <span class="circle-container">+</span>
+                                            <span class="circle-container" id="add">+</span>
                                             <span class="amount">1</span>
-                                            <span class="circle-container">-</span>
+                                            <span class="circle-container" id="subtract">-</span>
                                         </div>
                                     </div>
                                     <div class="info-price">
-                                        <span>$</span><span>1299</span>
+                                        <span>$</span><span id="price">1299</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="cart-info d-flex flex-column">
                                 <div class="cart-info-delivery d-flex justify-content-between py-4">
                                     <span>運費</span>
-                                    <span>免費</span>
+                                    <span id="total-delivery-price">免費</span>
                                 </div>
                                 <div class="cart-info-total d-flex justify-content-between py-4">
                                     <span>小記</span>
-                                    <span>5.298</span>
+                                    <span id="total">0</span>
                                 </div>
                             </div>
                         </div>

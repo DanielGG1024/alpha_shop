@@ -1191,7 +1191,7 @@ form select:invalid {
     width: 40%;
     margin-top: 4rem;
   }
-  .main-content .right-content .info {
+  .main-content .right-content .cart-items .info {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
@@ -1206,9 +1206,17 @@ form select:invalid {
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  .main-content .right-content .info .info-left {
-    -ms-flex-line-pack: start;
-        align-content: flex-start;
+  .main-content .right-content .cart-items .info .info-left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 /*# sourceMappingURL=all.css.map */

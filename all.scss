@@ -530,7 +530,6 @@ form {
                     flex-direction: column;
                     align-items: flex-end;
                     .info-amount {
-                        // text-align: right;
                         margin-top: 1rem;
                         .amount {
                             margin: 0 1rem;
@@ -603,18 +602,16 @@ form {
         .right-content {
             width: 40%;
             margin-top: 4rem;
-            .info {
-                flex: 1;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: flex-start;
-                .info-left {
-                    align-content: flex-start;
-                    // position: relative;
-                    .info-amount {
-                        // position: absolute;
-                        // top: 1.5rem;
-                        // left: 5px;
+            .cart-items {
+                .info {
+                    flex: 1;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    .info-left {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
                     }
                 }
             }
