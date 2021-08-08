@@ -87,6 +87,8 @@ $secondary-blue: #3c88fd;
 $freedom-blue: #02b8ff;
 $dark-gray: #4a4a4a;
 $light-gray: #a7aaaf;
+$black: #2a2a2a;
+$btn: #f67599;
 
 $sizes: (
     25: 25%,
@@ -284,27 +286,7 @@ body {
 
 %standard-boxshadow {
     box-shadow: 3px 0 13px 0 rgba(100, 112, 134, 0.1);
-    // box-shadow: 30px 0 100px 0 green;
 }
-// style
-header {
-    width: 100%;
-    height: 56px;
-    text-align: center;
-    background: #ffffff;
-    /* 陰影 */
-    -webkit-box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
-}
-.main-content {
-    width: 100%;
-    .container {
-        width: 95%;
-        margin: 0 auto;
-    }
-}
-
 @mixin getStepNums($num) {
     @for $i from 1 through $num {
         &:nth-child(#{$i}) .circle-container::after {
@@ -312,12 +294,37 @@ header {
         }
     }
 }
-.stepper-panel {
-    height: 120px;
+
+// style
+header {
+    width: 100%;
+    height: 56px;
+    text-align: center;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
+    .navbar-brand {
+        display: block;
+        width: 120px;
+        height: 30px;
+    }
+}
+
+.main-content {
+    width: 100%;
+    .container {
+        width: 95%;
+        margin: 0 auto;
+    }
     .title {
         padding: 1rem;
         font-size: 1.5rem;
     }
+}
+
+.stepper-panel {
+    height: 120px;
     .stepper-container {
         display: flex;
         padding: 1rem;
@@ -350,12 +357,12 @@ header {
             &.checked,
             &.active {
                 .circle-container {
-                    background-color: #2a2a2a;
+                    background-color: $black;
                     color: $white;
                 }
                 .connect-line {
                     height: 2px;
-                    background-color: #2a2a2a;
+                    background-color: $black;
                 }
             }
             &.checked .circle-container::after {
@@ -364,20 +371,8 @@ header {
         }
     }
 }
+
 .form-panel {
-    .form-row {
-        > label {
-            height: 21px;
-            display: block;
-            margin: 3px 0;
-            font-weight: 600;
-            color: $light-gray;
-        }
-    }
-    .title {
-        padding: 1rem;
-        font-size: 1.5rem;
-    }
     .part-delivery {
         .grid-row {
             padding: 0.5rem 1rem;
@@ -420,14 +415,12 @@ header {
         .form-row {
             @extend %input-style;
             align-items: center;
+            cursor: pointer;
+            width: 100%;
             small {
                 display: block;
                 color: $light-gray;
             }
-        }
-        label {
-            cursor: pointer;
-            width: 100%;
         }
     }
     .part-payment {
@@ -457,9 +450,14 @@ header {
                 }
             }
         }
-        .title {
-            padding: 1rem;
-            font-size: 1.5rem;
+    }
+    .form-row {
+        > label {
+            height: 21px;
+            display: block;
+            margin: 3px 0;
+            font-weight: 600;
+            color: $light-gray;
         }
     }
 }
@@ -479,14 +477,13 @@ form {
             -webkit-appearance: none;
             border-radius: 50%;
             &:checked {
-                box-shadow: inset 0 0 0 5px #2a2a2a;
+                box-shadow: inset 0 0 0 5px $black;
             }
         }
     }
     .select-wrapper {
         position: relative;
         &::after {
-            // content: "\25BE";
             content: "";
             border-style: solid;
             border-width: 6px 4px 0 4px;
@@ -508,10 +505,12 @@ form {
         }
     }
 }
+
 .cart-panel {
     padding: 1rem;
     .cart-content {
-        @extend %input-style;
+        border: 1px solid $light-gray;
+        border-radius: 5px;
         .cart-items {
             padding: 1rem;
             display: flex;
@@ -522,24 +521,46 @@ form {
                 .pic {
                     width: 100px;
                     height: 100px;
+                    min-width: 50px;
+                    min-height: 50px;
                 }
             }
             .info {
+                padding: 0.5rem;
                 .info-left {
                     display: flex;
                     flex-direction: column;
                     align-items: flex-end;
                     .info-amount {
                         margin-top: 1rem;
+                        display: flex;
                         .amount {
                             margin: 0 1rem;
+                            display: inline-block;
+                            line-height: 27px;
                         }
                     }
                 }
             }
         }
     }
+    .circle-container {
+        height: 27px;
+        width: 26px;
+        border-radius: 50%;
+        color: $black;
+        background-color: $light-gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
+
+
 .btn-panel {
     padding: 1rem;
     .btn-container {
@@ -557,37 +578,12 @@ form {
             background-color: $light-gray;
         }
         .btn-next {
-            background-color: #f67599;
+            background-color: $btn;
             color: $white;
         }
     }
 }
-.right-content {
-    .info {
-        padding: 0.5rem;
-    }
-    .info-amount {
-        display: flex;
-        .amount {
-            display: inline-block;
-            line-height: 27px;
-        }
-    }
-    .circle-container {
-        height: 27px;
-        width: 26px;
-        border-radius: 50%;
-        color: #2a2a2a;
-        background-color: $light-gray;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-        &:hover {
-            cursor: pointer;
-        }
-    }
-}
+
 .none {
     display: none;
 }

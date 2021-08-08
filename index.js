@@ -82,9 +82,9 @@ function handleCircleContainerClicked(e) {
 function handleFreightLabelClicked(e) {
     if (e.target.matches('Label')) {
         if (e.target.dataset.price === '0') {
-            console.log(document.querySelector('#total-delivery-price').innerHTML = '免費')
+            document.querySelector('#total-delivery-price').innerHTML = '免費'
         } else if (e.target.dataset.price === '500') {
-            console.log(document.querySelector('#total-delivery-price').innerHTML = '500')
+            document.querySelector('#total-delivery-price').innerHTML = '500'
         }
     }
     getTotal()
