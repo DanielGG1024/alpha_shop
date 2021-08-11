@@ -89,7 +89,7 @@ $dark-gray: #4a4a4a;
 $light-gray: #a7aaaf;
 $black: #2a2a2a;
 $btn: #f67599;
-
+$bottom-line: #2a2a2a;
 $sizes: (
     25: 25%,
     50: 50%,
@@ -299,20 +299,73 @@ body {
 header {
     width: 100%;
     height: 56px;
-    text-align: center;
+    position: fixed;
+    z-index: 99;
     background-color: #ffffff;
     -webkit-box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
+    .nav {
+        width: 90%;
+        height: 100%;
+    }
     .navbar-brand {
-        display: block;
-        width: 120px;
-        height: 30px;
+        position: absolute;
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        img {
+            max-width: 140px;
+        }
+    }
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3rem;
+        background-color: #ffffff;
+    }
+    .nav-icons {
+        display: none;
+        justify-content: center;
+        background-color: #ffffff;
+    }
+    .icon {
+        margin: 1.4rem 1rem;
+        width: 20px;
+        height: 20px;
+    }
+    .nav-item {
+        text-align: center;
+        width: 100%;
+        padding: 1rem;
+        border-bottom: 1px solid lighten($bottom-line, 75%);
+    }
+    .nav-link {
+        color: $bottom-line;
+    }
+    .navbar-toggle {
+        display: none;
+    }
+    .navbar-toggle:checked ~ .nav-list {
+        display: flex;
+    }
+    .navbar-toggle:checked ~ .nav-icons {
+        display: flex;
+    }
+    .hamburger {
+        display: inline-block;
+        position: absolute;
+        top: 20.5px;
+        left: 32px;
+        width: 20px;
+        height: 15px;
     }
 }
 
 .main-content {
     width: 100%;
+    overflow: scroll;
     .container {
         width: 95%;
         margin: 0 auto;
@@ -324,17 +377,36 @@ header {
 }
 
 .stepper-panel {
-    height: 120px;
+    padding-top: 50px;
     .stepper-container {
-        display: flex;
+        min-width: 200px;
+        height: 80px;
         padding: 1rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
         .step {
             @include getStepNums(3);
-            text-align: center;
+            align-items: center;
+            justify-content: flex-start;
+            display: flex;
             position: relative;
-            flex: 1;
-            margin: 0 auto;
+            z-index: -1;
+            overflow: hidden;
+            flex: 1 1;
+            .content {
+                display: flex;
+                position: relative;
+                height: 32px;
+                line-height: 32px;
+                margin-left: 3px;
+                color: $light-gray;
+            }
             .circle-container {
+                background-color: transparent;
+                text-align: center;
+                flex: none;
+                z-index: 1;
                 height: 32px;
                 width: 32px;
                 border: 1px solid $light-gray;
@@ -343,17 +415,8 @@ header {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin: 0 auto;
             }
-            .connect-line {
-                display: block;
-                position: absolute;
-                height: 1px;
-                background-color: $light-gray;
-                top: 12px;
-                right: calc(-50% + 30px);
-                left: calc(50% + 30px);
-            }
+
             &.checked,
             &.active {
                 .circle-container {
@@ -364,11 +427,36 @@ header {
                     height: 2px;
                     background-color: $black;
                 }
+                .content {
+                    color: $black;
+                    font-weight: 600;
+                    &::after {
+                        content: "";
+                        background-color: $black;
+                    }
+                }
             }
             &.checked .circle-container::after {
                 content: "\2714";
             }
         }
+    }
+    .step:not(:last-child) {
+        .content {
+            &::after {
+                content: "";
+                position: absolute;
+                width: 1000px;
+                height: 2px;
+                background-color: $light-gray;
+                top: 16px;
+                left: calc(100% + 1rem);
+                right: 50px;
+            }
+        }
+    }
+    .step:last-child {
+        flex: none;
     }
 }
 
@@ -409,6 +497,9 @@ header {
         }
     }
     .part-courier {
+        label {
+            max-width: 80%;
+        }
         .part-courier-conrainer {
             padding: 0.5rem 1rem;
         }
@@ -508,14 +599,18 @@ form {
 
 .cart-panel {
     padding: 1rem;
+    overflow: scroll;
     .cart-content {
+        flex: 1;
         border: 1px solid $light-gray;
         border-radius: 5px;
+        overflow: scroll;
         .cart-items {
             padding: 1rem;
             display: flex;
             flex-direction: column;
             .item {
+                padding: 0.5rem 0;
                 display: flex;
                 justify-content: space-between;
                 .pic {
@@ -523,34 +618,42 @@ form {
                     height: 100px;
                     min-width: 50px;
                     min-height: 50px;
+                    align-self: center;
+                    margin: auto 0;
                 }
             }
             .info {
                 padding: 0.5rem;
+                flex-wrap: wrap;
                 .info-left {
                     display: flex;
                     flex-direction: column;
                     align-items: flex-end;
                     .info-amount {
-                        margin-top: 1rem;
+                        margin: 1rem 0;
                         display: flex;
+                        flex-wrap: wrap;
                         .amount {
                             margin: 0 1rem;
-                            display: inline-block;
                             line-height: 27px;
                         }
                     }
                 }
             }
         }
+        .cart-info-delivery,
+        .cart-info-total {
+            border-top: 1px solid $light-gray;
+        }
     }
     .circle-container {
-        height: 27px;
+        height: 26px;
         width: 26px;
         border-radius: 50%;
         color: $black;
         background-color: $light-gray;
         display: flex;
+        position: relative;
         justify-content: center;
         align-items: center;
         margin: 0 auto;
@@ -558,8 +661,10 @@ form {
             cursor: pointer;
         }
     }
+    #subtract:after {
+        content: "-";
+    }
 }
-
 
 .btn-panel {
     padding: 1rem;
@@ -572,14 +677,30 @@ form {
         }
         button {
             width: 100%;
-            @extend %input-style;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 8px;
         }
-        .btn-pre {
-            background-color: $light-gray;
+    }
+    .btn-prev {
+        background-color: transparent;
+        &:hover {
+            background-color: darken($white, 10%);
         }
-        .btn-next {
-            background-color: $btn;
-            color: $white;
+        &::before {
+            content: "←";
+            margin-right: 1rem;
+        }
+    }
+    .btn-next {
+        background-color: $btn;
+        color: $white;
+        &:hover {
+            background-color: darken($btn, 10%);
+        }
+        &::after {
+            content: "→";
+            margin-left: 1rem;
         }
     }
 }
@@ -587,17 +708,79 @@ form {
 .none {
     display: none;
 }
-
+.scrollbar {
+    padding-left: 6px;
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 3px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
 // 桌機
 @media screen and (min-width: 375px) {
-    .main-content {
+    header {
+        width: 100%;
+    }
+    .nav {
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
         display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .nav-list {
+            all: unset;
+            display: flex;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .nav-item {
+            all: unset;
+            margin-left: 1.5rem;
+        }
+        .navbar-brand {
+            all: unset;
+            min-width: 140px;
+            margin: 0 auto;
+        }
+        .nav-icons {
+            all: unset;
+            display: flex;
+        }
+        .hamburger {
+            display: none;
+        }
+    }
+    .stepper-panel {
+        padding-top: 80px;
+    }
+    .main-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-areas:
+            "left right"
+            "left right"
+            "left right"
+            "left right"
+            "btn right";
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow-x: scroll;
+        }
         .left-content {
-            width: 60%;
+            // width: 50%;
+            min-width: 453px;
+            grid-area: left;
         }
         .right-content {
-            width: 40%;
+            // width: 50%;
+            min-width: 400px;
             margin-top: 4rem;
+            grid-area: right;
             .cart-items {
                 .info {
                     flex: 1;
@@ -612,5 +795,89 @@ form {
                 }
             }
         }
+        .btn-panel {
+            grid-area: btn;
+            .btn-content {
+                justify-content: flex-end;
+            }
+            button {
+                width: 50%;
+                max-width: 180px;
+            }
+        }
+        .cart-content {
+            .title {
+                display: block;
+            }
+        }
+        .part-delivery {
+            .grid-row {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                grid-template-areas:
+                    "salutation name name name"
+                    "phone phone email email"
+                    "location address address address";
+            }
+        }
+        .part-payment {
+            .grid-row {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                grid-template-areas:
+                    "name name name ."
+                    "number number number ."
+                    "date date ccv ccv";
+            }
+        }
+    }
+    .content-text {
+        display: flex;
+    }
+    .footer {
+        display: block;
+        width: 100%;
+        background-color: #e5e5e5;
+    }
+    .footer-container {
+        padding: 2rem 1rem;
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+    }
+    .footer-brand {
+        line-height: 140px;
+        margin: auto 0;
+        width: 140px;
+        height: 19px;
+        img {
+            width: 100%;
+        }
+    }
+    .footer-panel {
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+        height: 100%;
+        .item {
+            display: flex;
+            flex-direction: column;
+        }
+        .icon {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .item-list {
+        display: flex;
+        flex-direction: column;
+    }
+    .item-link {
+        color: $light-gray;
+        font-size: 0.5rem;
     }
 }
