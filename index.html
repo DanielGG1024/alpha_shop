@@ -33,233 +33,222 @@
     </header>
     <div class="main-app">
         <div class="main-content scrollbar">
-            <div class="left-content">
-                <div class="stepper-panel container" id="step-control">
-                    <div class="stepper-title">
-                        <h1 class="title">結帳</h1>
-                    </div>
-                    <!-- <div class="stepper-container" id="step-control">
-                    <div class="step active">
-                        <div class="circle-container"></div>
-                        <div class="connect-line"></div>
-                    </div>
-                    <div class="step">
-                        <div class="circle-container mid"></div>
-                        <div class="connect-line"></div>
-                    </div>
-                    <div class="step">
-                        <div class="circle-container right"></div>
-                    </div>
-                </div> -->
-                    <div class="stepper-container" id="step-control">
-                        <div class="step active">
-                            <div class="circle-container"></div>
-                            <div class="content">
-                                <span class="content-text none">寄送地址</span>
-                            </div>
+            <div class="main-container">
+
+
+                <div class="left-content">
+                    <div class="stepper-panel" id="step-control">
+                        <div class="stepper-title">
+                            <h1 class="title">結帳</h1>
                         </div>
-                        <div class="step pl-4">
-                            <div class="circle-container"></div>
-                            <div class="content">
-                                <span class="content-text none">運送方式</span>
-                            </div>
-                        </div>
-                        <div class="step pl-4">
-                            <div class="circle-container"></div>
-                            <div class="content">
-                                <span class="content-text none">付款資訊</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-panel container">
-                    <div class="form-container">
-                        <form action="">
-                            <div class="form-content" id="a-form">
-                                <!-- .part  step 三種不同內容-->
-                                <div class="part part-delivery">
-                                    <h4 class="title">寄送地址</h4>
-                                    <div class="grid-row">
-                                        <div class="form-row gird-salutation">
-                                            <label for="">稱謂</label>
-                                            <div class="select-wrapper">
-                                                <select name="a-type" id="a-type" required>
-                                                    <option value="" disabled selected>請選擇稱謂</option>
-                                                    <option value="male">先生</option>
-                                                    <option value="female">小姐</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-row grid-name">
-                                            <label for="">姓名</label>
-                                            <div class="input-wrapper">
-                                                <input type="text" placeholder="姓名">
-                                            </div>
-                                        </div>
-                                        <div class="form-row grid-phone">
-                                            <label for="">電話</label>
-                                            <div class="input-wrapper">
-                                                <input type="text" placeholder="請輸入行動電話">
-                                            </div>
-                                        </div>
-                                        <div class="form-row grid-email">
-                                            <label for="">Email</label>
-                                            <div class="input-wrapper">
-                                                <input type="text" placeholder="請輸入電子郵件">
-                                            </div>
-                                        </div>
-                                        <div class="form-row grid-location">
-                                            <label for="">縣市</label>
-                                            <div class="select-wrapper">
-                                                <select name="a-type" id="a-type" required>
-                                                    <option value="" disabled selected>請選擇縣市</option>
-                                                    <option value="1">台北</option>
-                                                    <option value="2">桃園</option>
-                                                    <option value="3">新竹</option>
-                                                    <option value="4">苗栗</option>
-                                                    <option value="5">台中</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-row grid-address">
-                                            <label for="">地址</label>
-                                            <div class="input-wrapper">
-                                                <input type="text" placeholder="請輸入地址">
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="stepper-container" id="step-control">
+                            <div class="step active">
+                                <div class="circle-container"></div>
+                                <div class="content">
+                                    <span class="content-text none">寄送地址</span>
                                 </div>
-                                <div class="part part-courier none">
-                                    <h4 class="title">運送方式</h4>
-                                    <div class="part-courier-conrainer">
-                                        <label for="standard" class="form-row d-flex justify-content-between mt-5"
-                                            data-price="0">
-                                            <div class="description d-flex align-items-center">
-                                                <input type="radio" id="standard" name="delivery" checked>
-                                                <div class="ml-3">
-                                                    <p>標準運送</p>
-                                                    <small>約3~7個工作天</small>
+                            </div>
+                            <div class="step pl-4">
+                                <div class="circle-container"></div>
+                                <div class="content">
+                                    <span class="content-text none">運送方式</span>
+                                </div>
+                            </div>
+                            <div class="step pl-4">
+                                <div class="circle-container"></div>
+                                <div class="content">
+                                    <span class="content-text none">付款資訊</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-panel">
+                        <div class="form-container">
+                            <form action="">
+                                <div class="form-content" id="a-form">
+                                    <!-- .part  step 三種不同內容-->
+                                    <div class="part part-delivery">
+                                        <h4 class="title">寄送地址</h4>
+                                        <div class="grid-row">
+                                            <div class="form-row gird-salutation">
+                                                <label for="">稱謂</label>
+                                                <div class="select-wrapper">
+                                                    <select name="a-type" id="a-type" required>
+                                                        <option value="" disabled selected>稱謂</option>
+                                                        <option value="male">先生</option>
+                                                        <option value="female">小姐</option>
+                                                    </select>
                                                 </div>
                                             </div>
-                                            <div>
-                                                <span>免費</span>
-                                            </div>
-                                        </label>
-                                        <label for="dhl" class="form-row d-flex justify-content-between mt-5"
-                                            data-price="500">
-                                            <div class="description d-flex align-items-center">
-                                                <input type="radio" id="dhl" name="delivery">
-                                                <div class="ml-3">
-                                                    <p>DHL 貨運</p>
-                                                    <small>48小時內送達</small>
+                                            <div class="form-row grid-name">
+                                                <label for="">姓名</label>
+                                                <div class="input-wrapper">
+                                                    <input type="text" placeholder="姓名">
                                                 </div>
                                             </div>
-                                            <span>500</span>
-                                        </label>
+                                            <div class="form-row grid-phone">
+                                                <label for="">電話</label>
+                                                <div class="input-wrapper">
+                                                    <input type="text" placeholder="請輸入行動電話">
+                                                </div>
+                                            </div>
+                                            <div class="form-row grid-email">
+                                                <label for="">Email</label>
+                                                <div class="input-wrapper">
+                                                    <input type="text" placeholder="請輸入電子郵件">
+                                                </div>
+                                            </div>
+                                            <div class="form-row grid-location">
+                                                <label for="">縣市</label>
+                                                <div class="select-wrapper">
+                                                    <select name="a-type" id="a-type" required>
+                                                        <option value="" disabled selected>縣市</option>
+                                                        <option value="1">台北</option>
+                                                        <option value="2">桃園</option>
+                                                        <option value="3">新竹</option>
+                                                        <option value="4">苗栗</option>
+                                                        <option value="5">台中</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-row grid-address">
+                                                <label for="">地址</label>
+                                                <div class="input-wrapper">
+                                                    <input type="text" placeholder="請輸入地址">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="part part-courier none">
+                                        <h4 class="title">運送方式</h4>
+                                        <div class="part-courier-conrainer">
+                                            <label for="standard" class="form-row d-flex justify-content-between mt-5"
+                                                data-price="0">
+                                                <div class="description d-flex align-items-center">
+                                                    <input type="radio" id="standard" name="delivery" checked>
+                                                    <div class="ml-3">
+                                                        <p>標準運送</p>
+                                                        <small>約3~7個工作天</small>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <span>免費</span>
+                                                </div>
+                                            </label>
+                                            <label for="dhl" class="form-row d-flex justify-content-between mt-5"
+                                                data-price="500">
+                                                <div class="description d-flex align-items-center">
+                                                    <input type="radio" id="dhl" name="delivery">
+                                                    <div class="ml-3">
+                                                        <p>DHL 貨運</p>
+                                                        <small>48小時內送達</small>
+                                                    </div>
+                                                </div>
+                                                <span>500</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="part part-payment none">
+                                        <h4 class="title">付款資訊</h4>
+                                        <div class="grid-row">
+                                            <div class="form-row grid-name">
+                                                <label for="">持卡人姓名</label>
+                                                <div class="input-wrapper">
+                                                    <input type="text" placeholder="john Doe">
+                                                </div>
+                                            </div>
+                                            <div class="form-row grid-number">
+                                                <label for="">卡號</label>
+                                                <div class="input-wrapper">
+                                                    <input type="text" placeholder="1111 2222 3333 4444">
+                                                </div>
+                                            </div>
+                                            <div class="form-row grid-date">
+                                                <label for="">有效日期</label>
+                                                <div class="input-wrapper">
+                                                    <input type="text" placeholder="MM/YY">
+                                                </div>
+                                            </div>
+                                            <div class="form-row grid-ccv">
+                                                <label for="">CVC/CCV</label>
+                                                <div class="input-wrapper">
+                                                    <input type="text" placeholder="123">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="part part-payment none">
-                                    <h4 class="title">付款資訊</h4>
-
-                                    <div class="grid-row">
-                                        <div class="form-row grid-name">
-                                            <label for="">持卡人姓名</label>
-                                            <div class="input-wrapper">
-                                                <input type="text" placeholder="john Doe">
-                                            </div>
-                                        </div>
-                                        <div class="form-row grid-number">
-                                            <label for="">卡號</label>
-                                            <div class="input-wrapper">
-                                                <input type="text" placeholder="1111 2222 3333 4444">
-                                            </div>
-                                        </div>
-                                        <div class="form-row grid-date">
-                                            <label for="">有效日期</label>
-                                            <div class="input-wrapper">
-                                                <input type="text" placeholder="MM/YY">
-                                            </div>
-                                        </div>
-                                        <div class="form-row grid-ccv">
-                                            <label for="">CVC/CCV</label>
-                                            <div class="input-wrapper">
-                                                <input type="text" placeholder="123">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="right-content">
-                <div class="cart-panel">
-                    <div class="cart-container container">
-                        <div class="cart-content">
-                            <h4 class="title none">購物籃</h4>
-                            <div class="cart-items" id="all-item">
-                                <div class="item mb-4">
-                                    <div class="pic">
-                                        <img src="./pic/Block.png" alt="">
-                                    </div>
-                                    <div class="info d-flex flex-column align-items-end">
-                                        <div class="info-left">
-                                            <div class="info-title">
-                                                <span>破壞補釘修身牛仔褲</span>
-                                            </div>
-                                            <div class="info-amount">
-                                                <span class="circle-container" id="subtract"></span>
-                                                <span class="amount">1</span>
-                                                <span class="circle-container" id="add">+</span>
-                                            </div>
+                <div class="right-content">
+                    <div class="cart-panel">
+                        <div class="cart-container">
+                            <div class="cart-content">
+                                <h4 class="title none">購物籃</h4>
+                                <div class="cart-items" id="all-item">
+                                    <div class="item mb-4">
+                                        <div class="pic">
+                                            <img src="./pic/Block.png" alt="">
                                         </div>
-                                        <div class="info-price">
-                                            <span>$</span><span id="price">3999</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="pic">
-                                        <img src="./pic/Block (1).png" alt="">
-                                    </div>
-                                    <div class="info d-flex flex-column align-items-end">
-                                        <div class="info-left">
-                                            <div class="info-title">
-                                                <span>刷色直筒牛仔褲</span>
+                                        <div class="info d-flex flex-column align-items-end">
+                                            <div class="info-left">
+                                                <div class="info-title">
+                                                    <span>破壞補釘修身牛仔褲</span>
+                                                </div>
+                                                <div class="info-amount">
+                                                    <span class="circle-container" id="subtract"></span>
+                                                    <span class="amount">1</span>
+                                                    <span class="circle-container" id="add"></span>
+                                                </div>
                                             </div>
-                                            <div class="info-amount">
-                                                <span class="circle-container" id="subtract"></span>
-                                                <span class="amount">1</span>
-                                                <span class="circle-container" id="add">+</span>
+                                            <div class="info-price">
+                                                <span>$</span><span id="price">3999</span>
                                             </div>
                                         </div>
-                                        <div class="info-price">
-                                            <span>$</span><span id="price">1299</span>
+                                    </div>
+                                    <div class="item mb-4">
+                                        <div class="pic">
+                                            <img src="./pic/Block (1).png" alt="">
+                                        </div>
+                                        <div class="info d-flex flex-column align-items-end">
+                                            <div class="info-left">
+                                                <div class="info-title">
+                                                    <span>刷色直筒牛仔褲</span>
+                                                </div>
+                                                <div class="info-amount">
+                                                    <span class="circle-container" id="subtract"></span>
+                                                    <span class="amount">1</span>
+                                                    <span class="circle-container" id="add"></span>
+                                                </div>
+                                            </div>
+                                            <div class="info-price">
+                                                <span>$</span><span id="price">1299</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="cart-info d-flex flex-column">
-                                    <div class="cart-info-delivery d-flex justify-content-between py-4">
-                                        <span>運費</span>
-                                        <span id="total-delivery-price">免費</span>
-                                    </div>
-                                    <div class="cart-info-total d-flex justify-content-between py-4">
-                                        <span>小記</span>
-                                        <span id="total">0</span>
+                                    <div class="cart-info d-flex flex-column">
+                                        <div class="cart-info-delivery d-flex justify-content-between ">
+                                            <span>運費</span>
+                                            <span id="total-delivery-price">免費</span>
+                                        </div>
+                                        <div class="cart-info-total d-flex justify-content-between ">
+                                            <span>小記</span>
+                                            <span id="total">0</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="btn-panel">
-                <div class="btn-container container">
-                    <div class="btn-content" id="btn-control">
-                        <button class="btn-prev none">上一步</button>
-                        <button class="btn-next">下一步</button>
+                <div class="btn-panel">
+                    <div class="btn-container ">
+                        <div class="btn-content" id="btn-control">
+                            <button class="btn-prev none">上一步</button>
+                            <button class="btn-next">下一步</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -302,9 +291,9 @@
                         <ul class="item-list">
                             <il class="item-link">+886 02123-45678</il>
                             <il>
-                                <a href="" class="item-link icon" ><img src="./pic/iconf.png" alt=""></a>
-                                <a href="" class="item-link icon" ><img src="./pic/icon.png" alt=""></a>
-                                <a href="" class="item-link icon" ><img src="./pic/icon-3.png" alt=""></a>
+                                <a href="" class="item-link icon"><img src="./pic/iconf.png" alt=""></a>
+                                <a href="" class="item-link icon"><img src="./pic/icon.png" alt=""></a>
+                                <a href="" class="item-link icon"><img src="./pic/icon-3.png" alt=""></a>
                             </il>
                         </ul>
                     </div>
