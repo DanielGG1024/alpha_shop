@@ -1351,7 +1351,7 @@ form select:invalid {
 }
 
 .scrollbar {
-  padding-left: 6px;
+  padding-left: -6px;
 }
 
 .scrollbar::-webkit-scrollbar {

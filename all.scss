@@ -725,7 +725,7 @@ form {
     display: none;
 }
 .scrollbar {
-    padding-left: 6px;
+    padding-left: -6px;
     &::-webkit-scrollbar {
         width: 6px;
     }
