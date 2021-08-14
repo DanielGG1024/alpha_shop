@@ -1281,11 +1281,12 @@ form select:invalid {
 }
 
 .btn-panel .btn-container {
-  border-top: 1px solid #a7aaaf;
   padding: 1rem;
 }
 
 .btn-panel .btn-container .btn-content {
+  padding-top: 1rem;
+  border-top: 1px solid #a7aaaf;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
