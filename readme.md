@@ -5,4 +5,4 @@
 
 ## Features
 
-alpha_shop(https://danielgg1024.github.io/alpha_shop/)
+(https://danielgg1024.github.io/alpha_shop/)
